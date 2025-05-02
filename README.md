@@ -18,7 +18,44 @@ This repository provides an **SDXL-compatible pipeline** that enables:
 
 ## 🚀 Usage
 
+Pick one of these prompts and substitute of the prompt variable:
+
+Here are several examples of long, detailed prompts suitable for Stable Diffusion XL or other text-to-image models. Each prompt is at least a paragraph in length and describes a scene with rich detail, using explicit sensory and visual cues, as recommended for effective AI image generation.
+
+---
+
+**1. Enchanted Forest at Dawn**
+
+A sprawling, ancient forest bathed in the soft golden light of early morning, with towering trees covered in thick moss and delicate ferns carpeting the forest floor. Shafts of sunlight break through the dense canopy, illuminating patches of wildflowers in vibrant colors and casting intricate shadows. In the distance, a gentle mist hovers above a crystal-clear stream winding through the trees, reflecting the pastel hues of the sky. The air is filled with the subtle glow of fireflies, and a family of deer grazes quietly near the water’s edge, while birds in brilliant plumage flit between branches, their songs echoing through the tranquil scene.
+
+---
+
+**2. Futuristic Cityscape at Night**
+
+A bustling metropolis in the heart of a futuristic world, where towering skyscrapers of glass and steel are adorned with glowing neon signs in every color imaginable. The streets below are alive with streams of autonomous vehicles, their headlights creating ribbons of light that weave through the city. Crowds of people in avant-garde fashion move along elevated walkways, while holographic advertisements flicker above them, casting a surreal glow. In the distance, a monorail glides silently past a shimmering river that reflects the dazzling city lights, and the sky is filled with flying cars darting between the buildings under a canopy of artificial stars.
+
+---
+
+**3. Cozy Mountain Cabin in Winter**
+
+Nestled in a snow-covered valley surrounded by towering pine trees, a rustic wooden cabin emits a warm, inviting glow from its windows. Smoke curls lazily from the stone chimney, hinting at a roaring fire within. The landscape is blanketed in fresh, untouched snow that sparkles under the pale light of a full moon. Icicles hang from the eaves, and a trail of footprints leads from the front porch to a frozen pond nearby, where children in colorful scarves skate and laugh. The crisp night air is filled with the scent of pine and the distant sound of an owl hooting, creating a serene and magical winter scene.
+
+---
+
+**4. Bustling Market in Marrakesh**
+
+A vibrant open-air market in Marrakesh, alive with a tapestry of colors, sounds, and scents. Stalls overflowing with spices, fruits, and textiles line the narrow, winding alleys, their wares displayed in intricate patterns. The air is thick with the aroma of saffron, cinnamon, and roasting meats, while vendors call out to passersby in a lively mix of languages. Sunlight filters through ornate latticework, casting decorative shadows on the cobblestone streets. Shoppers in traditional and modern attire haggle over handwoven rugs and gleaming brass lanterns, and musicians play rhythmic melodies on stringed instruments, adding to the energetic, festive atmosphere.
+
+---
+
+**5. Serene Japanese Garden in Spring**
+
+A tranquil Japanese garden in full bloom during spring, with delicate cherry blossoms drifting gently to the ground and forming a soft pink carpet around a peaceful koi pond. Stone lanterns and arched wooden bridges span the water, where brightly colored koi swim lazily beneath the surface. Manicured shrubs and moss-covered rocks create a harmonious landscape, while a gentle breeze carries the scent of blooming wisteria. In the background, a traditional tea house with sliding shoji doors overlooks the garden, and a pair of cranes stand gracefully at the water’s edge, completing the scene of quiet beauty and balance.
+
+---
+
 Just like a regular `diffusers` pipeline:
+
 
 ```python
 from lpw_stable_diffusion_xl import StableDiffusionXLLongPromptPipeline
@@ -28,9 +65,7 @@ pipe = StableDiffusionXLLongPromptPipeline.from_pretrained(
 torch_dtype=torch.float16
 ).to("cuda")
 
-prompt = "A (highly detailed:1.5) futuristic cityscape with (flying cars:1.2), (neon lights:1.3), [smoggy sky], " +
-"and a bustling crowd of people in unique attire, " +
-"with towering buildings stretching into the clouds. " * 10 # Make prompt very long
+prompt = "A tranquil Japanese garden in full bloom during spring, with delicate cherry blossoms drifting gently to the ground and forming a soft pink carpet around a peaceful koi pond. Stone lanterns and arched wooden bridges span the water, where brightly colored koi swim lazily beneath the surface. Manicured shrubs and moss-covered rocks create a harmonious landscape, while a gentle breeze carries the scent of blooming wisteria. In the background, a traditional tea house with sliding shoji doors overlooks the garden, and a pair of cranes stand gracefully at the water’s edge, completing the scene of quiet beauty and balance."
 
 image = pipe(prompt).images
 image.save("output.png")
