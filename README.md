@@ -112,18 +112,18 @@ The pipeline replaces the default prompt encoding:
 
 ```python
 (
-prompt_embeds,
-negative_prompt_embeds,
-pooled_prompt_embeds,
-negative_pooled_prompt_embeds,
-) = lpw.get_weighted_text_embeddings_sdxl(
-pipe=self,
-prompt=prompt,
-neg_prompt=negative_prompt,
-prompt_embeds=prompt_embeds,
-negative_prompt_embeds=negative_prompt_embeds,
-pooled_prompt_embeds=pooled_prompt_embeds,
-negative_pooled_prompt_embeds=negative_pooled_prompt_embeds,
+   prompt_embeds,
+   negative_prompt_embeds,
+   pooled_prompt_embeds,
+   negative_pooled_prompt_embeds,
+) = lpw.get_weighted_text_embeddings_sdxl (
+   pipe=self,
+   prompt=prompt,
+   neg_prompt=negative_prompt,
+   prompt_embeds=prompt_embeds,
+   negative_prompt_embeds=negative_prompt_embeds,
+   pooled_prompt_embeds=pooled_prompt_embeds,
+   negative_pooled_prompt_embeds=negative_pooled_prompt_embeds,
 )
 ```
 
